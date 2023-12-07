@@ -1,0 +1,20 @@
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            float cmToinch = 2.54f;
+            float squareMeterTosquareFeet = 10.764f;
+
+            Console.Write("Please enter the numerical value in centimeters that you want to convert to inches: ");
+            int number1 = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("\nPlease enter the numerical value in square meters that you want to convert to square feet: ");
+            int number2 = Convert.ToInt32(Console.ReadLine());
+
+            float result1 = number1 * cmToinch;
+            float result2 = number2 * squareMeterTosquareFeet;
+
+            Console.Write("\nFirst number = " + result1 + "\nSecond number= " + result2);
+            Console.ReadLine();
+        }
+    }
