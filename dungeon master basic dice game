@@ -1,0 +1,58 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+
+namespace DungeonMasterDiceGame
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Please press a key to roll the dungeon master dice\n15-20 ---> great damage\n10-15 ---> mid damage\n5-10 ---> no damage\n0-5 ---> self damage");
+            Console.ReadKey();
+            Console.Clear();
+            Random random = new Random();
+            int randomNumber = random.Next(0, 21);
+            Console.Write(randomNumber + " ---> ");
+            switch(randomNumber)
+            {
+                case 1:
+                case 2:
+                case 3:
+                case 4: Console.WriteLine("You have just taken damage!");
+                    break;
+
+                case 5:
+                case 6:
+                case 7:
+                case 8:
+                case 9: Console.WriteLine("No damage has been dealt!");
+                    break;
+
+                case 10: 
+                case 11:
+                case 12:
+                case 13:
+                case 14:Console.WriteLine("You have dealt a good amount of damage!");
+                    break;
+
+                case 15:
+                case 16:
+                case 17:
+                case 18:
+                case 19:
+                case 20:Console.WriteLine("You have damaged great!");
+                    break;
+            }
+            Thread _thread = new Thread(() =>
+            {
+                Thread.Sleep(7000);
+            });
+
+            _thread.Start();
+        }
+    }
+}
